@@ -1,5 +1,7 @@
 "use client";
-
+import { useState } from "react";
+import LeaveInPlaceModal from "./LeaveInPlaceModal";
+import CollectFromParcelPointModal from "./CollectFromParcelPointModal";
 interface DeliveryOption {
   id: string;
   label: string;
@@ -24,6 +26,12 @@ export default function DeliveryOptions({
   managementDeadline = "[DD/MM/YYYY Time]",
   onOptionSelect,
 }: DeliveryOptionsProps) {
+  const [isLeaveModalOpen, setIsLeaveModalOpen] = useState(false);
+  const [isParcelModalOpen, setIsParcelModalOpen] = useState(false);
+
+  const closeLeaveModal = () => setIsLeaveModalOpen(false);
+  const closeParcelModal = () => setIsParcelModalOpen(false);
+
   return (
     <section className="fade-in-up fade-in-up-delay-2">
       <h2 className="text-lg font-bold mb-1" style={{ color: "#f1f5f9" }}>
@@ -45,10 +53,23 @@ export default function DeliveryOptions({
           <DeliveryOptionButton
             key={option.id}
             option={option}
-            onSelect={() => onOptionSelect?.(option.id)}
+            onSelect={() => {
+              if (option.id === "leave-place") {
+                setIsLeaveModalOpen(true);
+                return;
+              }
+              if (option.id === "parcelpoint") {
+                setIsParcelModalOpen(true);
+                return;
+              }
+              onOptionSelect?.(option.id);
+            }}
           />
         ))}
       </div>
+
+      <LeaveInPlaceModal isOpen={isLeaveModalOpen} onClose={closeLeaveModal} />
+      <CollectFromParcelPointModal isOpen={isParcelModalOpen} onClose={closeParcelModal} />
     </section>
   );
 }
