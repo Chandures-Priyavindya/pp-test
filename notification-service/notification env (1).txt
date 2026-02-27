@@ -1,0 +1,63 @@
+# ============================================
+# NOTIFICATION SERVICE - Environment Configuration
+# ============================================
+
+# Application
+NODE_ENV=development
+PORT=3003
+LOG_LEVEL=info
+
+# Supabase Database Configuration
+SUPABASE_DB_HOST=db.jnahtaeowzdieswiaits.supabase.co
+SUPABASE_DB_PORT=5432
+SUPABASE_DB_USER=postgres
+SUPABASE_DB_PASSWORD=Dt2OExXnjEAgcu5j
+SUPABASE_DB_NAME=postgres
+
+# Supabase API Configuration
+SUPABASE_URL=https://jnahtaeowzdieswiaits.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpuYWh0YWVvd3pkaWVzd2lhaXRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0NzQ5MjMsImV4cCI6MjA4NjA1MDkyM30.ShefLuKm4iXdh25AIsKro6mmp3goRxhUN0NtZ5aNWqU
+SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpuYWh0YWVvd3pkaWVzd2lhaXRzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDQ3NDkyMywiZXhwIjoyMDg2MDUwOTIzfQ.VgEV0GSKdXHFyM70bgf2M2LYFc2Yb3jbFgFqEQAQST0
+
+# Auth Service Configuration
+AUTH_SERVICE_URL=http://localhost:3001
+
+# Database Connection Pool
+DB_POOL_MIN=2
+DB_POOL_MAX=10
+
+# CORS Configuration
+CORS_ORIGIN=*
+
+# Rate Limiting
+RATE_LIMIT_WINDOW=900000
+RATE_LIMIT_MAX=100
+
+# ============================================
+# EMAIL CONFIGURATION (SMTP)
+# ============================================
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=weblurox@gmail.com
+SMTP_PASSWORD=tmwvcaynqfmnfqqm
+SMTP_FROM=weblurox@gmail.com
+
+# ============================================
+# SMS CONFIGURATION (TWILIO)
+# ============================================
+TWILIO_ACCOUNT_SID=AC806c17da946766328c10708a568c0e02
+TWILIO_AUTH_TOKEN=42ac1482cac2099f25aa576df6e6fa7a
+TWILIO_PHONE_NUMBER=+1234567890
+
+# ============================================
+# PUSH NOTIFICATION CONFIGURATION
+# ============================================
+# Options: onesignal, firebase
+PUSH_NOTIFICATION_PROVIDER=onesignal
+PUSH_NOTIFICATION_API_KEY=your-onesignal-api-key
+
+# ============================================
+# LOG CONFIGURATION
+# ============================================
+LOG_PRETTY=true
